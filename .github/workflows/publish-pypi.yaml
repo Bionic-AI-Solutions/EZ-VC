@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   release-build:
-    runs-on: ubuntu-latest
+    runs-on: k3s-bionic
 
     steps:
       - uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
           path: dist/
 
   pypi-publish:
-    runs-on: ubuntu-latest
+    runs-on: k3s-bionic
 
     needs:
       - release-build
